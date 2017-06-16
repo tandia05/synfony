@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}          
+
+      <h1><span>Welcome to</span> Symfony </h1>
+      <h3><p>Bravo, nous avons lobalisé la page d'accueil</p></h3>
+
+        {# ceci est un commenteire twig  #}
+
+        <h1>{{title}}</h1>
+        <p>{{message}}</p>
+        <p>{{joueur1.nom}} est agé de {{joueur1.age}} ans</p>
+
+        <ul>
+            {% for joueur in joueurs %}
+
+                <li> 
+
+                    {{joueur.nom}}-  {{joueur.prenom}}
+                    {% if joueur.age > 29  %}
+                        <span>{trentenaire}</span>
+                    {% endif %}
+
+                </li>
+
+            {% endfor %}
+        </ul>
+
+
+
+{% endblock %}
+        
+
+           

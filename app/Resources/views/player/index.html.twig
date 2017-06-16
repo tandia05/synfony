@@ -13,19 +13,24 @@
 
         <ul>
             {% for joueur in joueurs %}
-
                 <li> 
-
                     {{joueur.nom}}-  {{joueur.prenom}}
                     {% if joueur.age > 29  %}
                         <span>{trentenaire}</span>
                     {% endif %}
-
                 </li>
-
             {% endfor %}
         </ul>
-
+        <ul>
+            {% for player in players %}
+                <li> 
+                    {{player.nom}}-  {{player.prenom}}
+                    {% if player.age > 29  %}
+                        <span>{trentenaire}</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
 
 
 {% endblock %}

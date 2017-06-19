@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{%  block body %}
+
+<form method="POST">
+	<input type="text" placeholder="nom" name="nom">
+	<input type="text" placeholder="prenom" name="prenom">
+	<input type="text" placeholder="age" name="age">
+	<label>Numero de maillot</label>
+	<select name="numero_maillot">
+		{% for i in 1..999 %}
+		<option>{{i}}</option>
+		{% endfor %}
+	</select>
+
+	<input class="btn btn-primary btn-xs" type="submit" name="Enregistrer" >
+</form>
+
+{%  endblock %}

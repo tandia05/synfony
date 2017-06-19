@@ -1,39 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}          
+{# commentaire twig  #}
 
-      <h1><span>Welcome to</span> Symfony </h1>
-      <h3><p>Bravo, nous avons lobalisé la page d'accueil</p></h3>
+{% block body %}
+    <h1>{{title}}</h1>
+    <p>{{message}}</p>
+    <p>{{joueur1.nom}} est âgé de {{joueur1.age}} ans</p>
+    <ul>
+        {% for joueur in joueurs %}
+            <li>
+                {{joueur.nom}}
+                {% if joueur.age > 29 %}
+                    <span> (trentenaire)</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
 
-        {# ceci est un commenteire twig  #}
-
-        <h1>{{title}}</h1>
-        <p>{{message}}</p>
-        <p>{{joueur1.nom}} est agé de {{joueur1.age}} ans</p>
-
-        <ul>
-            {% for joueur in joueurs %}
-                <li> 
-                    {{joueur.nom}}-  {{joueur.prenom}}
-                    {% if joueur.age > 29  %}
-                        <span>{trentenaire}</span>
+    <table class="table table-striped">
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Age</th>
+            <th>Numéro</th>
+        </tr>
+        {% for player in players %}
+            <tr>
+                <td>
+                    <a href="player/{{player.id}}">{{player.nom}}</a>
+                </td>
+                <td>{{player.prenom}}</td>
+                <td>
+                    {{player.age}}
+                    {% if player.age > 29 %}
+                    <span> (trentenaire)</span>
                     {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-        <ul>
-            {% for player in players %}
-                <li> 
-                    {{player.nom}}-  {{player.prenom}}
-                    {% if player.age > 29  %}
-                        <span>{trentenaire}</span>
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-
-
+                </td>
+                <td>{{player.numeroMaillot}}</td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
-        
-
-           

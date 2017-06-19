@@ -35,13 +35,20 @@ class Player
      */
     private $prenom;
 
-    /**
+     /**
      * @var int
      *
      * @ORM\Column(name="age", type="integer")
      */
     private $age;
 
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="numero_maillot", type="integer")
+     */
+    private $numero_maillot;
 
     /**
      * Get id
@@ -101,7 +108,7 @@ class Player
         return $this->prenom;
     }
 
-    /**
+     /**
      * Set age
      *
      * @param integer $age
@@ -123,6 +130,30 @@ class Player
     public function getAge()
     {
         return $this->age;
+    }
+
+    /**
+     * Set numero_maillot
+     *
+     * @param integer $numero_maillot
+     *
+     * @return Player
+     */
+    public function setNumeroMaillot($numero_maillot)
+    {
+        $this->numero_maillot = $numero_maillot;
+
+        return $this;
+    }
+
+    /**
+     * Get numero_maillot
+     *
+     * @return int
+     */
+    public function getNumeroMaillot()
+    {
+        return $this->numero_maillot;
     }
 }
 
